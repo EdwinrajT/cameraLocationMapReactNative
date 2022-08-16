@@ -11,6 +11,7 @@ function OutlineButton({icon,children,onPress}){
         </Pressable>
     );
 }
+
 export default OutlineButton;
 const styles=StyleSheet.create({
     container:{

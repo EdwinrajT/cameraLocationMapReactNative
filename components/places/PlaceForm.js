@@ -22,6 +22,7 @@ function PlaceForm(){
         </ScrollView>
     );
 }
+
 export default PlaceForm;
 
 const styles=StyleSheet.create({

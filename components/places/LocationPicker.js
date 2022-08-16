@@ -16,6 +16,7 @@ function LocationPicker(){
         </View>
     </View>
 }
+
 export default LocationPicker;
 
 const styles=StyleSheet.create({

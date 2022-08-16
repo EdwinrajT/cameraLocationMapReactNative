@@ -47,6 +47,7 @@ function ImagePicker(){
         </View>
     );
 }
+
 export default ImagePicker;
 const styles=StyleSheet.create({
     imageContainer:{
