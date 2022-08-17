@@ -32,7 +32,7 @@ function ImagePicker(){
             quality:0.5
         })
         setCapturedImage(image.uri);
-
+        console.log(image);
     }
     let previewImage=<Text>No Preview Image</Text>
     if(capturedImage)

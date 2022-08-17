@@ -4,9 +4,11 @@ import { Colors } from '../../constants/colors';
 import { getCurrentPositionAsync, useForegroundPermissions,PermissionStatus } from "expo-location";
 import { getMapPreviw } from "../../util/location";
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 function LocationPicker(){
     const [locationImage,setlocationImage]=useState();
     const [currentLocationPermissionInfo,requestPermission]= useForegroundPermissions();  
+    const navigation=useNavigation();
    
     async function verifyPermission(){
         if(currentLocationPermissionInfo.status===PermissionStatus.UNDETERMINED)
@@ -27,6 +29,7 @@ function LocationPicker(){
             return;
         }
         const location=await getCurrentPositionAsync();
+        console.log(location)
         setlocationImage({
             lat:location.coords.latitude,
             long:location.coords.longitude
@@ -38,7 +41,7 @@ function LocationPicker(){
         previewLocation=<Image style={styles.imageStyle} source={{uri:getMapPreviw(locationImage.lat,locationImage.long)}}/>
     }
     function viewMapHandler(){
-
+        navigation.navigate('Map');
     }
     return <View>
         <View style={styles.container}>{previewLocation}</View>
